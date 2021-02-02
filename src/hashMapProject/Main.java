@@ -1,6 +1,7 @@
 package hashMapProject;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -21,8 +22,8 @@ public class Main {
 		for(int i = 0; i < questionList.size(); i++) {
 			System.out.println(questionList.get(i));
 			numberList.add(userInput.nextInt());
+			userInput.nextLine();
 		}
-		userInput.close();
 		
 		System.out.println(numberList);
 		
@@ -81,10 +82,12 @@ public class Main {
 	    cars.put("Supra", "Toyota");
 	    System.out.println(cars);
 		
-		Scanner inputModel = new Scanner(System.in);
-		System.out.println("What model of car are you looking for?\n");
+
+		System.out.println("What model of car are you looking for?");
 		
-		String model = inputModel.nextLine();
+		String model = userInput.nextLine();
+		
+		
 		String make = cars.get(model);
 		if (cars.containsKey(model)) {
 			System.out.printf("Oh you are looking for a %s? ", model);
@@ -94,7 +97,8 @@ public class Main {
 			System.out.println("Oh we don't got any of those 'round here.");
 		}
 		
-		inputModel.close();
+		userInput.close();
+
 
 		
 		
